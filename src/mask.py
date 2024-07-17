@@ -1,3 +1,5 @@
+
+
 def get_mask_card_number(card_number: int) -> str:
     """Функция вернет замаскированный номер карты в соответствии с шаблоном
     XXXX XX** **** XXXX, где X — это цифра номера"""
@@ -17,7 +19,9 @@ def get_mask_account(bank_account: int) -> str:
     **XXXX, где X — это цифра номера"""
     place_of_star = [0, 1]
     bank_account_list = list(map(int, str(bank_account)))[14:]
-    bank_account_masks = ["*" if bank_account_list.index(el) in place_of_star else el for el in bank_account_list]
+    bank_account_masks = [
+        "*" if bank_account_list.index(el) in place_of_star else el for el in bank_account_list
+    ]
     return "".join(map(str, bank_account_masks))
 
 
