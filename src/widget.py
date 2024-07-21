@@ -5,7 +5,9 @@ def mask_account_card(type_and_number_of_card: str) -> str:
     """Функция вернет замаскированный номер счета в соответствии с шаблоном
      **XXXX, где X — это цифра номера счета
      XXXX XX** **** XXXX, где X — это цифра номера карты
-      с названием"""
+      с названием
+
+      """
     name = ''
     digit = ''
     for el in type_and_number_of_card:
