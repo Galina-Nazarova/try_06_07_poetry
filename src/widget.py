@@ -1,4 +1,5 @@
-import src.mask as mk
+import src.mask as
+# после девелоп
 
 
 def mask_account_card(type_and_number_of_card: str) -> str:
