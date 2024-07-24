@@ -2,17 +2,20 @@ def filter_by_state(dict_list:list, state_key='EXECUTED') -> list:
     """ Функция принимает список словарей и опционально значение для ключа state
     (по умолчанию 'EXECUTED'). Функция возвращает новый список словарей, содержащий только те словари, у которых ключ
     state соответствует указанному значению."""
+    # список для хранения отфильтрованных словарей
     new_dict_list = []
-    for el in dict_list:
-        if state_key in el.values():
-            new_dict_list.append(el)
+    # цикл для перебора элементов списка - словарей
+    for dict_ in dict_list:
+        # условие для проверки равенства значения ключа tste аданному аргументу
+        if dict_['state'] == state_key:
+            new_dict_list.append(dict_)
     return new_dict_list
 
-def sort_by_date(dict_list:list, sort_rules='True') -> list:
+def sort_by_date(dict_list:list, sort_rules: bool =True) -> list:
     """Функция принимает список словарей и необязательный параметр,
     задающий порядок сортировки (по умолчанию — убывание).
     Функция должна возвращать новый список, отсортированный по дате (date)."""
-    return sorted(data, key=lambda x: x['date'],reverse=bool(sort_rules))
+    return sorted(data, key=lambda x: x['date'],reverse=sort_rules)
 
 if __name__ == '__main__':
     data = [
@@ -22,4 +25,4 @@ if __name__ == '__main__':
         {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'}
     ]
     print(filter_by_state(data, 'CANCELED'))
-    print(sort_by_date(data, 'True'))
+    print(sort_by_date(data))
