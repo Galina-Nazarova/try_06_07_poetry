@@ -1,6 +1,3 @@
-from datetime import datetime
-
-
 def filter_by_state(dict_list:list, state_key='EXECUTED') -> list:
     """ Функция принимает список словарей и опционально значение для ключа state
     (по умолчанию 'EXECUTED'). Функция возвращает новый список словарей, содержащий только те словари, у которых ключ
