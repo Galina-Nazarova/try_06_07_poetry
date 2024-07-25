@@ -1,7 +1,10 @@
-def filter_by_state(dict_list:list, state_key='EXECUTED') -> list:
-    """ Функция принимает список словарей и опционально значение для ключа state
-    (по умолчанию 'EXECUTED'). Функция возвращает новый список словарей, содержащий только те словари, у которых ключ
-    state соответствует указанному значению."""
+
+
+def filter_by_state(dict_list: list, state_key='EXECUTED') -> list:
+    """ Функция принимает список словарей и опционально значение
+    для ключа state(по умолчанию 'EXECUTED'). Функция возвращает
+    новый список словарей, содержащий только те словари, у которых
+    ключ state соответствует указанному значению."""
     # список для хранения отфильтрованных словарей
     new_dict_list = []
     # цикл для перебора элементов списка - словарей
@@ -11,12 +14,13 @@ def filter_by_state(dict_list:list, state_key='EXECUTED') -> list:
             new_dict_list.append(dict_)
     return new_dict_list
 
-def sort_by_date(dict_list:list, sort_rules: bool =True) -> list:
-    """Функция принимает список словарей и необязательный параметр,
-    задающий порядок сортировки (по умолчанию — убывание).
-    Функция должна возвращать новый список, отсортированный по дате (date).
-    """
-    return sorted(data, key=lambda x: x['date'],reverse=sort_rules)
+
+def sort_by_date(dict_list: list, sort_rules: bool = True) -> list:
+    """Функция принимает список словарей и необязательный
+    параметр, задающий порядок сортировки (по умолчанию — убывание).
+    Функция должна возвращать новый список, отсортированный по дате (date)."""
+    return sorted(dict_list, key=lambda x: x['date'], reverse=sort_rules)
+
 
 if __name__ == '__main__':
     data = [
