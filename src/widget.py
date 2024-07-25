@@ -1,4 +1,5 @@
-import src.mask as
+import src.mask as mk
+
 # после девелоп
 # develop
 
